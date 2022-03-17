@@ -1,81 +1,148 @@
-let a = 12;
-document.write(a) // перевірка, чи працює файл 
+// 1) Оголосіть змінну типу number і зробіть явне перетворення до типу string використовуючи “String()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-// 1) Оголосіть три різні змінні за допомогою "let", "const", "var"
+let a = 1;
+let b = String(a);
+console.log(typeof b);
 
-let aa = 1;
-var b = 2;
-const c = 3;
+// 2) Оголосіть змінну типу number і зробіть явне перетворення до типу boolean використовуючи “Boolean()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-// 2) Оголосіть одну змінну якій можна міняти значення і одну змінну якій не можна міняти значення
-let aaa = 1; // можна міняти значення
-var bbb = 2; // можна міняти значення
-const ccc = 3; // не можна міняти значення
+let aa = 0;
+let bb = Boolean(aa);
+console.log(typeof bb, bb);
 
-// 3) Напишіть 1 коментар в 1 рядок і напишіть ще один коментар на 4 рядки
+// 3) Оголосіть змінну типу number і зробіть явне перетворення до типу null використовуючи “Null()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-// цей коментар на один рядочок
-/* а цей коментар 
-на декілька рядків
-наприклад 
-ось так*/
+let aaa = 22;
+let bbb = (a = null); // вимушений так зробити, бо писало в консолі браузера, що Null not defined. 
+console.log(typeof bbb, bbb); // І далі так робив, а не через функцію.
 
-// 4) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу String.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 4) Оголосіть змінну типу string і зробіть явне перетворення до типу number використовуючи “Number()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-let aaaa = 'adasd';
-console.log(typeof aaaa);
+let ilon = '22';
+let numilon = Number(ilon);
+console.log(typeof numilon, numilon);
 
-// 5) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Number.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 5) Оголосіть змінну типу string і зробіть явне перетворення до типу boolean використовуючи “Boolean()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-let bbbb = 123123;
-console.log(typeof bbbb);
+let str = 'i am batman';
+let boolstr = Boolean(str);
+console.log(typeof boolstr, boolstr);
 
-// 6) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Boolean.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 6) Оголосіть змінну типу string і зробіть явне перетворення до типу null використовуючи “Null()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-let ab = false;
-console.log(typeof ab);
+let wot = 'Allisov';
+let nulwot = (wot = null);
+console.log(typeof nulwot, nulwot);
 
-// 7) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Object яке буде містити хоча б 3 ключі.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 7) Оголосіть змінну типу boolean і зробіть явне перетворення до типу string використовуючи “String()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-let obj1 = {key1: '1', key2: '2', key3: '3'};
-console.log(typeof obj1);
+let ball = true;
+let strball = String(ball);
+console.log(typeof strball, strball);
 
-// 8) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Array яке буде містити хоча б 3 значення.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 8) Оголосіть змінну типу boolean і зробіть явне перетворення до типу number використовуючи “Number()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-let arr1 = [1, 2, 3];
-console.log(typeof arr1);
+let ball1 = false;
+let strball1 = Number(ball1);
+console.log(typeof strball1, strball1);
 
-// 9) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Function.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 9) Оголосіть змінну типу boolean і зробіть явне перетворення до типу null використовуючи Null()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
 
-function func(art) {  
-	return (art);    //цю частину взяв з підручника
+let ball2 = true;
+let strball2 = (ball2 = null);
+console.log(typeof strball2, strball2);
+
+// 10) Оголосіть змінну типу null і зробіть явне перетворення до типу string використовуючи “String()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
+
+let test = null;
+let strtest = String(test);
+console.log(typeof strtest, strtest);
+
+// 11) Оголосіть змінну типу null і зробіть явне перетворення до типу number використовуючи “Number()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
+
+let test1 = null;
+let strtest1 = Number(test1);
+console.log(typeof strtest1, strtest1);
+
+// 12) Оголосіть змінну типу null і зробіть явне перетворення до типу boolean використовуючи Boolean()”
+// * Bиведіть в консоль тип змінної використовуючи оператор "typeof" і функцію "console.log()"
+
+let test2 = null;
+let strtest2 = Boolean(test2);
+console.log(typeof strtest2, strtest2);
+
+// 13) Напишіть всі способи створення функції.
+
+let fun = function (){};
+function funy () {}; // з тих що мені відомі, без підглядок 
+
+// 14) Напишіть функцію яка нічого не повертає
+// * Викличіть функцію
+
+function func() {
+	console.log('');
 }
 
-let m = 1;
-func(m);
+func(); 
 
-console.log(typeof m);
+// 15) Напишіть функцію яка завжди буде повертати ваше імя
+// * Викличіть функцію
 
-// 10) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Undefined.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+function func1() {
+	return 'Batman';
+}
+console.log(func1());
 
-let un;
-console.log(typeof un);
 
-// 11) Оголосіть одну змінну і прийсвойте в неї будь яке значення типу Null.
-// * Bиведіть в консоль тип змінної виклристовуючи оператор "typeof" і функцію "console.log()"
+// 16) Створіть функцію яка приймає 1 аргумент і повертає його без змін.
+// * Викличіть функцію у двох різних варіантах, з даними aбо із змінними.
 
-let nul = null;
-console.log(typeof nul); 
+function one(arg1) {
+	console.log(arg1);
+	return arg1;
+}
+console.log(one(55));
 
-// 12) Оголосіть змінну user типу Object і опишіть своє: ім'я, фамілію, дату народження,
-// місце проживання, стать і можете добавити ще додаткові параметри використовуючи різні типи даних.
 
-let user = {name: 'Alex', fam: 'YAkov', dateb: '4', place: 'Ukr', male: 'man', penis: true,}
-console.log(user); 
+// 17) Створіть функцію яка приймає 2 аргументи і повертає суму цих 2 аргументів.
+// * Викличіть функцію у двох різних варіантах, з даними aбо із змінними.
+
+function one1(num1, num2) {
+	console.log(num1, num2);
+	return num1 + num2;
+}
+console.log(one1(5,7));
+
+// 18) Створіть функцію яка приймає 3 аргументи і повертає суму цих 3 аргументів.
+// * Викличіть функцію у двох різних варіантах, з даними aбо із змінними.
+
+function one2(nume1, nume2, nume3) {
+	console.log(nume1, nume2, nume3);
+	return nume1 + nume2 + nume3;
+}
+console.log(one2(5,7,8));
+
+
+function one3(numer1, numer2, numer3) {
+	console.log(numer1, numer2, numer3);
+	return numer1 + numer2 + numer3;
+}
+let asdasd = 4;
+let br = 'kg';
+console.log(one3(aaa,asdasd,br));
+
+function func15(name = 'Аноним', age) {
+	alert('ваше имя: ' + String(name) + ' вік ' + age);
+}
+func15('dd',13);
