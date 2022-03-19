@@ -148,17 +148,7 @@ let br = 'kg';
 console.log(one3(aaa,asdasd,br));
 
 function func15(name = 'Аноним', age) {
-	alert('ваше имя: ' + String(name) + ' вік ' + age);
+	console.log('ваше имя: ' + String(name) + ' вік ' + age);
 }
 func15('dd',13);
 
-
-function sumsqr(arr) {
-	let a = [];
-	for(let i = 0; i <= arr; i++) {
-		;
-	}
-	return a;
-}
-let arr1 = 5
-alert(sumsqr(arr1));
