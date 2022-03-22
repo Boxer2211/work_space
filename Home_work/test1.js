@@ -94,3 +94,9 @@ if (pr == 'сьогодні') {
 else {
     console.log('c'); 
 }
+
+
+let aa = (num1, num2) =>  num1 + num2  ;
+console.log(aa(2,3));
+
+
