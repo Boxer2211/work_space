@@ -91,7 +91,7 @@ let obj11 = {key1: 1, key2: 2, key3: {
             }
 console.log(obj11);
 
-function allKeyObj(arg2) {
+let allKeyObj = (arg2) => {
     for(let elem in arg2) {
         //console.log(elem, arg2[elem]);
         //console.log(typeof arg2[elem]);
@@ -137,7 +137,7 @@ let obj12 = {k1: 'sdCD', k2: 'asvzv', k3: {
 console.log(obj12);
 
 
-   function n(num) {                                 //довелось модернізувати функцію
+   let n = (num) => {                                 //довелось модернізувати функцію
     for(let elem in num) {
       
         if(typeof num[elem] == 'object'){ 
@@ -150,4 +150,3 @@ console.log(obj12);
     }    
 }
 n(obj12);
-//_______________________________________________________________________________
