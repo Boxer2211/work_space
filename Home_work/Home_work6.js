@@ -57,7 +57,7 @@ let arr5 = [1, 2,
                 ]
             ];                                   
 
-// let arr5 = [1, 2, ['man', 'woman', ['cat', 'dog'], ['bird', 'fox', ['book', 'pen']]]];
+                        // let arr5 = [1, 2, ['man', 'woman', ['cat', 'dog'], ['bird', 'fox', ['book', 'pen']]]];
                     
 function allElementsArr(arg1) {
     for(elem of arg1){
@@ -71,7 +71,7 @@ function allElementsArr(arg1) {
 };
 
 allElementsArr(arr5);
-
+                      
 
 // 8. Створіть рекурсивну функцію для того, щоб вивести в консоль всі ключі багатовимірного обєкту
 
