@@ -45,13 +45,13 @@ function Construktor(arg1, arg2) {
 }
 
 let obj1 = new Construktor(obj.name, obj.secondname);
-console.log(obj1.name1 + ' ' + obj1.secondname);
+console.log(obj1.name1 + ' ' + obj1.secondname); //вивести шоунейм !!!
 
 // 8. Створіть новий конструктор який буде унаслідувати функціонал конструктору з попереднього звдання і буде мати додатковий метод для виводу дати народження.
 
 obj.birthdate = new Date('1994-05-04');
 
-function Construktor1(arg1, arg2, arg3) {
+function Construktor1(arg1, arg2, arg3) {  //клас екстенд через класс !!!
     Construktor.call(this, arg1, arg2);     
     this.birthday = arg3;
     this.getbirsday = () => this.birthday;
@@ -65,3 +65,6 @@ console.log(obj2.name1, obj2.secondname, obj2.birthday);
 
 let newobject = new Construktor1('Shahid', 'Antanat', '04/05/1995');
 console.log(newobject.name1, newobject.birthday);
+
+
+
