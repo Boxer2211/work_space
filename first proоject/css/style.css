@@ -19,3 +19,22 @@ p {
     margin-left: 50px;
     margin-top: 50px;
 }
+.aria1 {
+    margin-left: 100px;
+}
+
+.aria1::first-letter {
+    color: red;
+    font-size: 50px;
+}
+
+.aria1 li:before  {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    display: inline-block;
+    margin: 0 10px 0 0;
+
+}

@@ -1,0 +1,257 @@
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E5E5E5;
+    
+}
+.main {
+ 
+    width: 1200px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+.main-content {
+    padding: 105px 90px;
+}
+
+.aboutpos{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.aboutname {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 55px;
+    color: black;
+    margin-bottom: 25px;
+}
+
+.aboutdis {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959;
+    width: 400px;
+}
+
+.about-user {
+margin-bottom: 40px;
+}
+
+.title1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;  
+    margin-bottom: 10px;
+}
+
+.projectitem {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: black;
+}
+.project {
+    margin-bottom: 50px;
+}
+
+.poscom {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: black; 
+    margin-bottom: 10px;
+}
+.org {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FB6D3A; 
+}
+.period {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #a8a8a8; 
+    margin-bottom: 10px;
+}
+.line1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: black; 
+}
+.worklist {
+    padding: 0;
+    margin-left: 15px;
+}
+.worklistli {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959; 
+}
+
+.man {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-top: 11px;
+    margin-bottom: 12px;
+}
+
+.title2 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;  
+    margin-bottom: 0;
+    }
+
+.hf {
+    margin-top: 12px;
+    margin-bottom: 11px;
+}
+ 
+    
+.pros {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959; 
+}
+
+.pros a {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #595959; 
+    margin-left: 10px;
+}
+
+.duj {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000000; 
+}
+
+.prolist {
+    padding: 0;
+    margin-left: 15px;
+}
+
+.sidebar {
+    background-color: #1E2939;
+    padding-top: 40px;
+    width: 370px;
+    
+}
+
+.foto {
+    width: 370px;
+    margin-bottom: 50px;
+}
+
+.tech, .contacts {
+    margin-left: 40px;
+}
+.contacts {
+    margin-bottom: 50px;
+}
+
+.contype {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.sidebartitle {
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 10px;
+}
+
+.link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #3D4755;
+    margin-right: 5px;
+}
+
+.techskillist {
+    color: #FFFFFF;
+    padding: 0;
+    margin-left: 17px;
+    margin-top: 8px;
+}
+
+.techitem {
+    color: #FB6D3A;
+}
+
+.itemtext {
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.soft {
+    margin-left: 40px;
+    margin-top: 45px;
+}
+
+.softlist {
+    color: #FFFFFF;
+    padding: 0;
+    margin-left: 17px;
+    margin-top: 8px;
+}
+
+.softitem {
+    color: #FB6D3A;
+}
+
+.softtext {
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
