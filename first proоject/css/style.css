@@ -1,0 +1,23 @@
+@charset "UTF-8";
+/*
+& - подключение родителя
+$ - создание переменной 
+@ - подключение файла
+*/
+body {
+  padding: 50px;
+  background-color: #a4d6a4;
+}
+
+.block-text {
+  font-size: 20px;
+}
+.block-text span {
+  color: red;
+}
+.block-text span:hover {
+  color: red;
+}
+.block-text p:hover {
+  color: red;
+}

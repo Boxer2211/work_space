@@ -1,0 +1,30 @@
+/*
+& - подключение родителя
+$ - создание переменной 
+@ - подключение файла
+*/
+
+
+body {
+    padding: 50px;
+    background-color: rgb(164, 214, 164);
+}
+
+$color2:red;
+
+.block-text {
+font-size: 20px;
+    span {
+        color: red;
+        &:hover{
+            color: $color2;
+        }
+    }
+    p{
+        &:hover {
+            color: $color2;
+        }
+    }
+}
+
+
