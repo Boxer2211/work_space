@@ -2,6 +2,7 @@
 & - подключение родителя
 $ - создание переменной 
 @ - подключение файла
+% - создание шаблона и обращение к шаблону через @extend %shablon;
 */
 
 
@@ -11,6 +12,10 @@ body {
 }
 
 $color2:red;
+
+%borderforlink{
+border-bottom: 5px solid rgb(17, 206, 10);
+}
 
 .block-text {
 font-size: 20px;
@@ -25,6 +30,9 @@ font-size: 20px;
             color: $color2;
         }
     }
+}
+a{
+    @extend %borderforlink;
 }
 
 

@@ -3,10 +3,15 @@
 & - подключение родителя
 $ - создание переменной 
 @ - подключение файла
+% - создание шаблона и обращение к шаблону через @extend %shablon;
 */
 body {
   padding: 50px;
   background-color: #a4d6a4;
+}
+
+a {
+  border-bottom: 5px solid #11ce0a;
 }
 
 .block-text {
