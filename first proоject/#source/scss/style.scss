@@ -5,34 +5,13 @@ $ - создание переменной
 % - создание шаблона и обращение к шаблону через @extend %shablon;
 */
 
+/*
 
-body {
-    padding: 50px;
-    background-color: rgb(164, 214, 164);
+Пример Миксина
+создание
+@mixin fontz($f) {
+    font-size: 100px;
 }
-
-$color2:red;
-
-%borderforlink{
-border-bottom: 5px solid rgb(17, 206, 10);
-}
-
-.block-text {
-font-size: 20px;
-    span {
-        color: red;
-        &:hover{
-            color: $color2;
-        }
-    }
-    p{
-        &:hover {
-            color: $color2;
-        }
-    }
-}
-a{
-    @extend %borderforlink;
-}
-
-
+подключение
+@include fontz(100px);
+*/
