@@ -1,0 +1,7 @@
+Доброго дня! Мене звати Олександр. Я володію HTML, CSS (SCSS), JS і трохи React. Верстав на фрілансі. Готовий працювати, набиратися досвіду. Мої проекти:
+Hello! My name is Alexander. I own HTML, CSS (SCSS), JS and a bit of React. Freelance workbench. Ready to work, gain experience. My projects: 
+
+Адаптивная верстка:
+Adaptive layout:
+
+https://my-resume-boxer2211.netlify.app
