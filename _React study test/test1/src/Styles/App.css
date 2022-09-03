@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+#root{
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.App {
+  width: 800px;
+ 
+}
+.post {
+  display: flex;
+  
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 5px;
+  border: solid 1px green;
+
+}
+
+
+/*
+анимация
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}*/
+
+/*
+анимайция
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+*/
