@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+
+  #root {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+  }
+
+
+/* Navbar ______________________________________________________________________________________________*/
+
+.Navbar{
+  position: relative;
+  width: 100%;
+  height: 7vh;
+  z-index: 50;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0% 1% 0% 1%;
+  
+}
+.Navbar__burger{
+  justify-content: center;
+  align-items: center;
+}
+.burger__button{
+  width: 30px;
+  height: 30px;
+  background-image: url('./img/lines_menu_burger_icon_123889.png');
+  background-size: 100%;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  .burger__button{
+    width: 20px;
+    height: 20px;
+  }
+}
