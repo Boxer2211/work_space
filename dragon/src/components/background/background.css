@@ -65,36 +65,10 @@
     margin-top: -60px;
     padding-left: 10px;
   }
-  #title p {
-    background: -webkit-linear-gradient(white, #38495a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-  }
-    
-  .title{
-    font-size: 100%;
-    font-weight: 500;
-    animation: anim 3s;
-  }
-  .text {
-    margin-top: 2%;
-    font-size: 50%;
-    animation: anim 3s;
-  }
-  @keyframes anim {
-    from {
-      transform: scale(0);
-    }
-    to {
-      transform: scale(1);
-    }
-    }
-
-
+ 
   @keyframes animStar {
     from {
-      transform: translateY(0px);
+      transform: translateY(-1000px);
     }
     to {
       transform: translateY(-2000px);

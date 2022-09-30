@@ -1,26 +1,20 @@
-import React from 'react';
-
+import React,{useContext} from 'react';
+import { Context } from "../index";
+import {useAuthState} from "react-firebase-hooks/auth";
 
 
 function Navbar() {
+  
+  const {auth} = useContext(Context)
+  const [user] = useAuthState(auth)
+ 
   return (
     <div className='Navbar'>    
-        <div className='Navbar__burger burger'>
-          <button className='burger__button'></button>
-        </div>
-        
-        <div className='Navbar__logo'>
-          <button>DragonX</button>
-        </div>
-        
-        <div className='Navbar__account account'>
-          <div className='account__logo'>
-           
+        <div className='Navbar__container'>
+          <div className='Navbar__logo logo'>
+            <a href='/main' className='logo__button'>dragon</a>
           </div>
-          <div className='account__button'>
-            <button>Sign Out</button>
-          </div>
-        </div>
+        </div>      
     </div>  
   );
 }

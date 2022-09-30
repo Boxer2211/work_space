@@ -1,0 +1,54 @@
+
+.Login__container{
+    width: 40%;
+    height: 40vh;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: rgba(114, 107, 107, 0.75);
+    padding: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "lato", sans-serif;
+}
+
+.Login__container p{
+    background: -webkit-linear-gradient(#213c55, black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 36px;
+}
+
+.Login__button{
+    margin: 8px 5px;
+    color: white;
+    padding: 10px;
+    background-color:rgba(17, 13, 13, 0.75);
+    cursor: pointer;
+    border:rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+}
+
+@media (max-width: 700px) {
+    .Login__container{
+        width: 50%;
+        height: 20vh;
+    }
+    .Login__container p{
+        font-size: 24px;
+    }
+  }
+
+  @media (max-width: 350px) {
+   
+    .Login__container p{
+        font-size: 18px;
+    }
+    .Login__button{
+        padding: 5px;
+        margin: 4px 3px;
+    }
+
+  }

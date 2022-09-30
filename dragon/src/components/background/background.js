@@ -11,8 +11,6 @@ function Background() {
         <div id='stars2'></div>
         <div id='stars3'></div>
         <div id='title'>
-        <p className='title'>DRAGON</p>
-        <p className='text'>SENDING HUMANS AND CARGO INTO SPACE</p>
         </div>
     </div>  
   );

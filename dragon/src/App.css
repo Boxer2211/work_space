@@ -3,18 +3,14 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
-
-
   #root {
     width: 100%;
     height: 100vh;
     position: absolute;
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     overflow: hidden;
+    
   }
-
-
 /* Navbar ______________________________________________________________________________________________*/
 
 .Navbar{
@@ -23,26 +19,55 @@
   height: 7vh;
   z-index: 50;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0% 1% 0% 1%;
   
 }
-.Navbar__burger{
-  justify-content: center;
-  align-items: center;
+.Navbar__container{
+  display: flex;
 }
-.burger__button{
-  width: 30px;
-  height: 30px;
-  background-image: url('./img/lines_menu_burger_icon_123889.png');
-  background-size: 100%;
-  border: none;
+.logo__button{
   cursor: pointer;
+  color: white;
+  font-size: 35px;
+  font-family: 'Space Rangers';
+  text-decoration: none;
 }
 @media (max-width: 500px) {
-  .burger__button{
-    width: 20px;
-    height: 20px;
+  .logo__button{
+    font-size: 20px;
   }
+}
+
+/* Main ______________________________________________________________________________________________*/
+.Main{
+  width: 100%;
+  height: 100vh;
+  margin-top: -3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Login ______________________________________________________________________________________________*/
+.Login{
+  width: 100%;
+  height: 100vh;
+  margin-top: -3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Loader ______________________________________________________________________________________________*/
+
+.Loader{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
 }
