@@ -22,7 +22,8 @@ const AppRouter = (props) => {
             <Route key={path} path={path} element={Component} />
             )}
             
-            <Route path="*" element={<Main />}/>    
+            <Route path="*" element={<Main />}/>
+                
              
         </Routes>
         )

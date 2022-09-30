@@ -22,35 +22,34 @@ function Dragon() {
             <div className='Description__name'>
               <p>{dragonChouseArray[0].name}</p>
             </div>
-            <div className='Description__table'>
-              <table>
-                <tbody>
-                <tr>
-                  <td>Name</td>
-                  <td>{dragonChouseArray[0].name}</td>
-                </tr>
-                <tr>
-                  <td>Description</td>
-                  <td>{dragonChouseArray[0].description}</td>
-                </tr>
-                <tr>
-                  <td>Wikipedia</td>
-                  <td>{dragonChouseArray[0].wikipedia}</td>
-                </tr>
-                <tr>
-                  <td>Height with trunk</td>
-                  <td>{dragonChouseArray[0].height_w_trunk.meters} meters / {dragonChouseArray[0].height_w_trunk.feet} feet </td>
-                </tr>
-                <tr>
-                  <td>Dry mass</td>
-                  <td>{dragonChouseArray[0].dry_mass_kg} kg / {dragonChouseArray[0].dry_mass_lb} lb</td>
-                </tr>
-                <tr>
-                  <td>First_flight</td>
-                  <td>{dragonChouseArray[0].first_flight}</td>
-                </tr>
-                </tbody>
-              </table>
+            <div className='Description__table Table'>
+              <div className='Table__body'>
+                <div className='Table__line'>
+                  <div>Name</div>
+                  <div>{dragonChouseArray[0].name}</div>
+                  </div>
+                <div className='Table__line'>
+                  <div>Description</div>
+                  <div>{dragonChouseArray[0].description}</div>
+                  </div>
+                <div className='Table__line'>
+                  <div>Wikipedia</div>
+                  <div><a href={dragonChouseArray[0].wikipedia}>Read more in Wikipedia</a></div>
+                  </div>
+                <div className='Table__line'>
+                  <div>Height with trunk</div>
+                  <div>{dragonChouseArray[0].height_w_trunk.meters} meters / {dragonChouseArray[0].height_w_trunk.feet} feet </div>
+                  </div>
+                <div className='Table__line'>
+                  <div>Dry mass</div>
+                  <div>{dragonChouseArray[0].dry_mass_kg} kg / {dragonChouseArray[0].dry_mass_lb} lb</div>
+                  </div>
+                <div className='Table__line'>
+                  <div>First_flight</div>
+                  <div>{dragonChouseArray[0].first_flight}</div>
+                  </div>
+              </div>
+              
             </div>
           </div>
         </div>
