@@ -53,10 +53,12 @@
 .User__name{
   color: white;
   margin: 0px 15px 0px 5px;
+  cursor: pointer;
 }
 .User__logo{
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 .User__logo img{
   width: 30px;

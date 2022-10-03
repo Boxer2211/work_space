@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { ContextDragonInfo } from '../../App';
 import { Context } from '../../index';
-import { DRAGON_ROUTE } from '../../utils/consts';
+import { DRAGON_ROUTE, PROFILE_ROUTE } from '../../utils/consts';
 import './Menu.css';
 
 
@@ -21,10 +21,10 @@ function MenuList({active, setActive}) {
         <div className='Menu__blur' />
         <div className='Menu__content' onClick={e => e.stopPropagation()}>
             <div className='Menu__user User'>
-                <div className='User__logo'>
+                <div className='User__logo' onClick={() => navigate(PROFILE_ROUTE)}>
                     <img src={userLogo} alt="user logo" />
                 </div>
-                <div className='User__name'>
+                <div className='User__name' onClick={() => navigate(PROFILE_ROUTE)}>
                     {userName}
                 </div>
                 <button className='User__signOut' onClick={() => auth.signOut()}>Sign Out</button>

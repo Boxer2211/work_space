@@ -1,0 +1,42 @@
+.Profile{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+}
+.Profile__information{
+    max-width: 400px;
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 50px 0 0 0px;
+}
+.Profile__user p{
+    color: aliceblue;
+    margin-top: 5px;
+}
+.Profile__favorits{
+    max-width: 400px;
+    border: 1px solid grey;
+    padding: 10px;
+    margin: 50px 0 0 0px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Profile__text{
+    font-size: 2rem;
+}
+.Profile__items{
+    display: flex;
+}
+.Profile__items p{
+ margin: 5px 5px 0 0;
+}
+.Profile__items button{
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+}

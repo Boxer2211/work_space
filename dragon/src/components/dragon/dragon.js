@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
 import Menu from '../menu/Menu';
 import './dragon.css';
 import { ContextDragonInfo } from '../../App';
-
+import Slider from '../Slider/Slider';
+import starRemove from './starRemov.svg';
+import starAdd from './starAdd.svg'
 
 
 function Dragon() {
@@ -11,8 +13,40 @@ function Dragon() {
   const{dragonInfo} = useContext(ContextDragonInfo)
   const {name} = useParams();
   const dragonChouseArray = dragonInfo.filter(el => el.name === name);
-  console.log(dragonChouseArray[0]);
   
+  const nameDragon =  dragonChouseArray[0].name;
+  const [favorites, setFavorites] = useState([]);
+  const getArray = JSON.parse(localStorage.getItem('favorites') || '0')
+  useEffect(() => {
+    if(getArray !== 0){
+     setFavorites([...getArray])
+    }
+   }, [])
+  const addFav = (props) => {
+    let array = favorites;
+    let addArray = true;
+    array.map((item, key) => {
+      if(item === nameDragon){
+        array.splice(key, 1);
+        addArray = false;
+      }
+      });
+    if(addArray) {
+      array.push(nameDragon);
+    }
+    setFavorites([...array])
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+
+    let storage = localStorage.getItem('favItem' + (nameDragon) || '0')
+    if(storage == null) {
+      localStorage.setItem(('favItem' + (nameDragon)), JSON.stringify(nameDragon))
+     }
+    else {
+      localStorage.removeItem('favItem' + (nameDragon));
+    }
+  }
+
+
   return (
     <div className='Dragon'>
       <Menu />
@@ -20,7 +54,20 @@ function Dragon() {
         <div className='Dragon__description Description'>
           <div className='Description__body'>
             <div className='Description__name'>
-              <p>{dragonChouseArray[0].name}</p>
+              <p>{dragonChouseArray[0].name} 
+                <span className='star'>
+                  
+                  {favorites.includes(nameDragon) ? (
+                    <img src={starRemove} alt="star" onClick={() => addFav(nameDragon)} />
+                  )
+                  :
+                  (
+                    <img src={starAdd} alt="star" onClick={() => addFav(nameDragon)} />
+                  )}
+                  
+                
+                </span>
+              </p>
             </div>
             <div className='Description__table Table'>
               <div className='Table__body'>
@@ -54,9 +101,7 @@ function Dragon() {
           </div>
         </div>
         <div className='Dragon__slaider Slider'>
-          <div className='Slider__body'>
-            <img src={dragonChouseArray[0].flickr_images[0]} alt="Dragon_foto" />
-          </div>
+          <Slider imgages={dragonChouseArray[0].flickr_images}/>
         </div>
       </div>
 
