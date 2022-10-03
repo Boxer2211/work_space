@@ -12,7 +12,7 @@ function Navbar() {
     <div className='Navbar'>    
         <div className='Navbar__container'>
           <div className='Navbar__logo logo'>
-            <a href='/main' className='logo__button'>dragon</a>
+            <a href='/main' className='logo__button'>DRAGON</a>
           </div>
         </div>      
     </div>  

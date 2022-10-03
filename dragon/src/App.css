@@ -1,11 +1,12 @@
 @font-face {
   font-family: 'Space Rangers';
-  src: url('fonts/spaceranger.ttf')
+  src: local('Open Sans'),
+        url('fonts/spaceranger.ttf');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
 }
-
-
-
-
 
 * {
     margin: 0;
@@ -42,6 +43,9 @@
   font-size: 40px;
   font-family: 'Space Rangers';
   text-decoration: none;
+}
+.logo {
+  font-family: 'Space Rangers';
 }
 @media (max-width: 500px) {
   .logo__button{
