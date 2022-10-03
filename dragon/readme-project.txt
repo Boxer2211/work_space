@@ -18,6 +18,7 @@ What has been done in the project:
     Type build and press Enter.
     netlify deploy --prod
     For change or update app you need type
+    npm run build
     netlify deploy --prod 
 
 Сделано в проекте:
@@ -40,6 +41,7 @@ netlify deploy
 Печатаем build и нажимаем Enter.
 netlify deploy --prod
 Для обновления приложения нужно набрать 
+npm run build
 netlify deploy --prod
 
 
