@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>1</title>
+</head>
+<body>
+    <div class="container">
+        <div class="conteiner__main main">
+                <input class="main__input" type="number" value="" id="main__input" />
+                <select class="main__select" name="select" id="main__select">
+                    <option value="m">m</option>
+                    <option value="cm">cm</option>
+                    <option value="in">in</option>
+                    <option value="ft">ft</option>
+                </select>
+        </div>
+        
+        <div class="container__convert convert">
+            <p>Convert to</p>
+            <select class="convert__select" name="convert__select" id="convert__select">
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="in">in</option>
+                <option value="ft">ft</option>
+            </select>
+        </div>
+        <input type="submit" value="Convert" onclick="getValue()">
+
+        <p id="resultP">Result = </p>
+
+        <button>Add params</button>
+        <div id="container__add">
+            <span>Введіть назву</span> 
+            <input type="text" placeholder="mm" value="" id="name"> 
+            <span>Множник метрів</span>
+            <input type="number" placeholder="m" value="" id="valM">
+            <span>Множник сантиметрів</span> 
+            <input type="number" placeholder="cm" value="" id="valCm"> 
+            <span>Множник Дюймів</span>
+            <input type="number" placeholder="in" value="" id="valIn">
+            <span>Множник футів</span> 
+            <input type="number" placeholder="ft" value="" id="valFt"> 
+            <button>Add</button>
+        </div>
+        
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
