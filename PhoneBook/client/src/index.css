@@ -21,13 +21,110 @@
 
 /* List________________________________________________________*/
 .List{
+	display: flex;
+	justify-content: center;
 
 }
-.List__container{
-
+.List__container, .container{
+	width: 70%;
+	height: 100vh;
+	background-color: rgb(227, 235, 241);
 }
 .List__head{
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0 20px 0;
+	padding: 0 5px 0 5px;
+}
+.List__p, .NewContact__p{
+	font-size: 22px;
+	font-weight: 600;
+}
+.List__button{
+	color: white;
+	background-color: rgb(23, 140, 218);
+	padding: 2px 7px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.List__button:active{
+	background-color: white;
+	color: rgb(23, 140, 218);
+}
+.List__content{
+	width: 99%;
+	display: flex;
+	justify-content: center;
+	margin: 0 5px;
 	
 }
+.List__content table{
+	width: 100%;
+	border: 1px solid grey;
+	text-align: center;
+	border-collapse:collapse;
+}
+.List__content table tr,td,th {
+	border: 1px solid grey;
+	padding: 5px;
+}
+.Table__button{
+	color: white;
+	padding: 2px 7px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.button-edit{
+	background-color: green;	
+}
+.button-delet{
+	background-color: red;	
+}
+.button-edit:active{
+	background-color: white;
+	color: green;	
+}
+.button-delet:active{
+	background-color: white;	
+	color: red;
+}
 
-/* Information________________________________________________________*/
+
+/* NewContact________________________________________________________*/
+.NewContact{
+	display: flex;
+	justify-content: center;
+}
+.NewContact__head{
+	margin: 10px 0 20px 5px;
+}
+.NewContact__name{
+	font-size: 22px;
+	font-weight: 600;
+}
+.NewContact__content{
+	display: flex;
+	flex-direction: column;
+	margin: 0 5px 0 5px;
+}
+.NewContact__p{
+	font-size: 16px;
+	font-weight: 400;
+}
+.NewContact__button{
+	color: white;
+	background-color: rgb(23, 140, 218);
+	padding: 2px 7px;
+	border-radius: 4px;
+	cursor: pointer;
+	width: fit-content;
+}
+.NewContact__button:active{
+	background-color: white;
+	color: rgb(23, 140, 218);
+}
+.NewContact__content input{
+	margin: 5px 0 5px 0;
+	padding: 5px;
+	border-radius: 5px;
+}

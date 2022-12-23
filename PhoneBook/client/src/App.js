@@ -1,13 +1,13 @@
 
-import List from './Components/List';
 import Navbar from './Components/Navbar';
 import {BrowserRouter} from 'react-router-dom'
+import AppRouter from './Components/AppRouter';
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <List />
+      <AppRouter />
     </BrowserRouter>
   );
 }
