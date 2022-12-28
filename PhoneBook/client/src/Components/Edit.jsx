@@ -1,24 +1,26 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createUser } from '../http/listApi';
 import { MAIN_ROUTE } from '../utils/consts';
+;
 
-function NewContact() {
+
+function Edit() {
   
+const oneUser = useSelector(state => state.toolkit.oneUser)
 const navigate =  useNavigate();
-
 const backToHome = () => {
   navigate(MAIN_ROUTE);
 }
 
-const [name, setName] = useState('');
-const [lastName, setLastName] = useState('');
-const [adress, setAdres] = useState('');
-const [city, setCity] = useState('');
-const [country, setCountry] = useState('');
-const [email, setEmail] = useState('');
-const [number, setNumber] = useState('');
+const [name, setName] = useState(oneUser.name);
+const [lastName, setLastName] = useState(oneUser.lastName);
+const [adress, setAdres] = useState(oneUser.address);
+const [city, setCity] = useState(oneUser.city);
+const [country, setCountry] = useState(oneUser.country);
+const [email, setEmail] = useState(oneUser.email);
+const [number, setNumber] = useState(oneUser.number);
 
 const addUser = () => {
 
@@ -76,4 +78,4 @@ const addUser = () => {
   );
 }
 
-export default NewContact;
+export default Edit;
