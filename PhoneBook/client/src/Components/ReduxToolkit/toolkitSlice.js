@@ -13,9 +13,16 @@ const toolkitSLice = createSlice({
         },
         putUser(state, action){
             state.oneUser = action.payload
-        }     
+        },
+        // updateUser(state, action){
+        //     state.users = action.payload  
+        // },
+        removeUser(state, action){
+            state.users = state.users.filter(data => data._id != action.payload)
+        }
+
     }
 })
 
 export default toolkitSLice.reducer
-export const {setUsers, putUser} = toolkitSLice.actions
+export const {setUsers, putUser, removeUser} = toolkitSLice.actions

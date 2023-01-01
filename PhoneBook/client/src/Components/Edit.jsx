@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { createUser } from '../http/listApi';
+import { createUser, putOneUser } from '../http/listApi';
 import { MAIN_ROUTE } from '../utils/consts';
 ;
 
@@ -25,6 +25,7 @@ const [number, setNumber] = useState(oneUser.number);
 const addUser = () => {
 
   let obj = {
+    _id: oneUser._id,
     name: name,
     lastName: lastName,
     address: adress,
@@ -34,7 +35,8 @@ const addUser = () => {
     number: number
   }
 
-  createUser(obj).then(data => {
+  putOneUser(obj).then(data => { 
+    console.log(data)     
     backToHome()
   }, 
     () => {
@@ -42,6 +44,7 @@ const addUser = () => {
     }
   ) 
 }
+
 
   return (
     <div className='NewContact'>    

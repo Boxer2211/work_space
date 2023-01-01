@@ -18,10 +18,10 @@ function List() {
   useEffect(() => {
       fetchUser().then(data => dispatch(setUsers(data)))
        // eslint-disable-next-line react-hooks/exhaustive-deps
+       
   }, [])
-
-  console.log(users);
- 
+  
+  
   return (
     <div className='List'>    
         <div className='List__container container'>

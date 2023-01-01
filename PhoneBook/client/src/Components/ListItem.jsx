@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { deleteUser, fetchUser, fetchOneUser} from '../http/listApi';
+import { deleteUser, fetchOneUser, fetchUser} from '../http/listApi';
 import { EDIT_ROUTE } from '../utils/consts';
-import { setUsers, putUser } from './ReduxToolkit/toolkitSlice';
+import { putUser, removeUser, setUsers } from './ReduxToolkit/toolkitSlice';
+
 
 
 function ListItem({id,name,lastName,address,city,country,email,number}) {
@@ -12,10 +13,11 @@ const users = useSelector(state => state.toolkit.users)
 const dispatch = useDispatch();
 const navigete = useNavigate();
 
+
 const deletUser = (id) => {
-  deleteUser(id);
-  fetchUser().then(data => dispatch(setUsers(data)));
-}
+    deleteUser(id).then(data => dispatch(removeUser(data)));
+     fetchUser().then(data => dispatch(setUsers(data))) 
+  }
 
 const Edit = (id) => {
   fetchOneUser(id).then(data => dispatch(putUser(data)))
