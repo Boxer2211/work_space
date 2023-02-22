@@ -1,6 +1,6 @@
 Array.prototype.containsAll = function(a) {
     
-  1
+  2
 
   } 
 
