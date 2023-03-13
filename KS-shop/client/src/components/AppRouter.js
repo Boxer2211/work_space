@@ -1,11 +1,11 @@
 
 import {Routes, Route} from 'react-router-dom';
 
+import MainPage from './Mainpage/MainPage';
+
 function AppRouter() {
   return (
-   <div className='b'>
-        Page
-   </div>
+   <MainPage />
   );
 }
 

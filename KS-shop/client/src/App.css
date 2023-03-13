@@ -7,6 +7,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
+    overflow-x: hidden;
     
   }
   /* Navbar__________________________________________________________________________________________*/
@@ -20,40 +21,96 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 24px;
+    background: rgba(255, 255, 255, 0.212);
+    backdrop-filter: blur(5px);
   }
   .header__container {
-    width: 1140px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: grey;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 0.3fr 0.7fr minmax(200px, 1fr) 1fr;
+    padding: 5px 10px;
   }
+  .header__logo {
+    justify-self: center;
+  } 
 
   .header__logo p {
-    font-family: 'Raleway';
+    position: relative;
+    font-family: 'Bodoni Moda';
     font-style: normal;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 40px;
     line-height: 100%;
-    color: white;
-  
+    color: black;
+    cursor: pointer;
+  } 
+  .header__menu{
+    justify-self: start;
+    
   }
-  .header__burger{
-    background-image: url('./img/BurgerMenu.png');
-    background-size: 100%;
-    background-color: transparent;
+  .header__menu input {
     width: 30px;
     height: 21px;
     cursor: pointer;
-    border: none;
- }
+    }
  .header__nav{
-  color: white;
+  color: black;
   display: flex;
   flex-direction: row;
+  font-family: 'Raleway';
+  font-style: normal;
+  justify-self: start;
  }
- .header__nav:not(:last-child){
-  margin-right: 5px;
+.header__nav p{
+margin: 0 5px 0 0;
+cursor: pointer;
+}
+ .header__icon{
+  display: flex;
+  justify-self: end;
+ }
+ .header__icon img {
+  width: 25px;
+  height: 25px;
+  margin: 0 0 0 25px;
+  cursor: pointer;
+ }
+ 
+ @media (max-width: 900px) {
+ .header__nav{
+  display: none;
+ }
+ .header__container {
+  grid-template-columns: 1fr 1fr 1fr;
+} 
+}
+@media (max-width: 650px) {
+  .header__icon img {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 20px;
+
+   }
+   .header__logo p {
+    font-size: 25px;
+  } 
+  .header__menu input {
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    }
+   
+  }
+
+ @media (max-width: 410px) {
+  .header__icon img {
+    width: 20px;
+    height: 20px;
+    margin: 0 0 0 10px;
+  }
+  .header__logo p {
+    text-align: center;
+  } 
+
  }
