@@ -3,8 +3,14 @@ import './Main.css';
 import insta from "../../img/insta.svg"
 import face from "../../img/facebook.jpg"
 
+import { CONTACTS_ROUTE } from "../../utils/consts";
+import { useNavigate } from "react-router-dom";
+
+
 
 function Footer() {
+  
+const navigate = useNavigate()
   return (
     <div className="Footer">
         <div className="Footer__container">
@@ -19,9 +25,9 @@ function Footer() {
             </div>
             <div className="Footer__items Footer__items-center">
               <p className="Footer__header">Деталі</p>
-              <a href="#">Про нас</a>
-              <a href="#">Доставка та оплата</a>
-              <a href="#">Умови використання сайту</a>
+              <p className="Footer__items-P" onClick={()=> navigate(CONTACTS_ROUTE)}>Про нас</p>
+              <p className="Footer__items-P">Доставка та оплата</p>
+              <p className="Footer__items-P">Умови використання сайту</p>
             </div>
             <div className="Footer__items" >
               <p className="Footer__header">Приєднуйтеся до нас</p>

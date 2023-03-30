@@ -30,6 +30,10 @@
     place-items: center;
     grid-template-columns: 0.3fr 0.7fr minmax(200px, 1fr) 1fr;
     padding: 5px 10px;
+   
+  }
+  .header__burger{
+    z-index: 60;
   }
   .header__logo {
     justify-self: center;
@@ -47,7 +51,7 @@
   } 
   .header__menu{
     justify-self: start;
-    
+    z-index: 100;
   }
   .header__menu input {
     width: 30px;
@@ -76,7 +80,80 @@ cursor: pointer;
   margin: 0 0 0 25px;
   cursor: pointer;
  }
- 
+ /* Burger menu _________________________________________________________________________________*/
+
+ .Menu__list{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 100%;
+  left: 0;
+  transform: translateX(-130%);
+  transition: all 0.2s;
+  
+}
+.Menu__list.active{
+  transform: translateX(0);
+}
+
+.Menu__content{
+  width: 30%;
+  height: 50%;
+  background-color: rgb(58, 58, 58);
+}
+.Burger__container{
+  color: rgb(207, 200, 200);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 10px;
+  font-size: 22px;
+}
+
+.Burger__container p{
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+/* user_content __________________________________________________________________________*/
+
+.userMenu{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 100%;
+  right: 0;
+  transform: translateX(130%); /* изменить для выезда*/
+  transition: all 0.2s;
+  
+}
+.userMenu.active{
+  transform: translateX(0);
+}
+
+.userMenu__content{
+  width: 30%;
+  height: 50%;
+  background-color: rgb(58, 58, 58);
+  color: rgb(207, 200, 200);
+  
+  position: absolute;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 10px;
+  font-size: 22px;
+}
+
+
+
+/* Media _________________________________________________________________________________*/
+
  @media (max-width: 900px) {
  .header__nav{
   display: none;
@@ -99,6 +176,14 @@ cursor: pointer;
     width: 30px;
     height: 20px;
     cursor: pointer;
+    }
+    .Menu__content{
+      width: 100%;
+      height: 100%;
+    }
+    .userMenu__content{
+      width: 100%;
+      height: 100%;
     }
    
   }

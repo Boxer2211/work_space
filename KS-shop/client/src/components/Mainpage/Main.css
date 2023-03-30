@@ -1,5 +1,6 @@
 .Foto__container{
     display: flex;
+    z-index: 50;
 }
 .Foto__items{
     flex-basis: 33.4%;
@@ -156,7 +157,14 @@ img:nth-child(4){animation-delay:0}
    text-decoration: none;
    font-family: 'Raleway';
    color: black; 
+   cursor: pointer;
+
 }
+.Footer__items-P{
+    font-size: 18px;
+    cursor: pointer;
+}
+
 .Footer__insta{
 display: flex;
 align-items: center;
@@ -165,7 +173,7 @@ margin: 5px 0;
 .Footer__insta img{
     margin-right: 5px;
 }
-.Footer__items-center a{
+.Footer__items-center p{
     margin-bottom: 5px;
 }
 
@@ -216,7 +224,7 @@ margin: 5px 0;
     }
    
  }
-@media (max-width: 410px) {
+@media (max-width: 414px) {
     #foto2{
         display: none;
     }

@@ -1,29 +1,31 @@
-import { ADMIN_ROUTE, BASKET_ROUTE, SHOP_ROUTE, THING_ROUTE } from "./utils/consts"
+
+import MainPage from "./components/Mainpage/MainPage"
+import ContactPage from "./pages/contacts/contactPage"
+import { ADMIN_ROUTE, BASKET_ROUTE, CONTACTS_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from "./utils/consts"
 
 export const publicRoutes = [
     {
-        path: LOGIN_ROUTE,
-        Component:  
+        path: MAIN_ROUTE,
+        Component:  <MainPage />
     },
     {
         path: SHOP_ROUTE,
-        Component:  
+        Component:  1
     },
     {
-        path: THING_ROUTE + '/:id',
-        Component:  
+        path: CONTACTS_ROUTE,
+        Component: <ContactPage />
     }
-
 ]
 
 export const privateRoutes = [
     {
         path: ADMIN_ROUTE ,
-        Component: 
+        Component: 1
     },
     {
         path: BASKET_ROUTE ,
-        Component: 
+        Component: 1
     }
     
 ]
