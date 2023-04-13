@@ -1,6 +1,7 @@
 
 import MainPage from "./components/Mainpage/MainPage"
 import ContactPage from "./pages/contacts/contactPage"
+import Shop from "./pages/shop/shop"
 import { ADMIN_ROUTE, BASKET_ROUTE, CONTACTS_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from "./utils/consts"
 
 export const publicRoutes = [
@@ -10,7 +11,7 @@ export const publicRoutes = [
     },
     {
         path: SHOP_ROUTE,
-        Component:  1
+        Component:  <Shop />
     },
     {
         path: CONTACTS_ROUTE,

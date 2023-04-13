@@ -5,7 +5,7 @@ import hart from '../img/Frame (1).svg';
 import usericon from '../img/Frame (2).svg';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
-import { CONTACTS_ROUTE, MAIN_ROUTE } from '../utils/consts';
+import { CONTACTS_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
 
 
 function Navbar() {
@@ -26,7 +26,7 @@ function Navbar() {
                     <div className='Menu__content' onClick={e => e.stopPropagation()}>
                         <div className='Burger__container'>
                             <p onClick={() => navigate(MAIN_ROUTE)}>Головна</p>
-                            <p>Католог</p>
+                            <p onClick={() => navigate(SHOP_ROUTE)}>Католог</p>
                             <p onClick={() => navigate(CONTACTS_ROUTE)}>Про нас</p>
                             <p onClick={() => navigate(CONTACTS_ROUTE)}>Контакти</p>
                         </div>
@@ -35,8 +35,8 @@ function Navbar() {
             </div>
             
             <div className="header__nav">
-                <p>NEW</p>
-                <p>КАТАЛОГ</p>
+                
+                <p onClick={() => navigate(SHOP_ROUTE)}>КАТАЛОГ</p>
                 <p onClick={() => navigate(CONTACTS_ROUTE)}>ПРО НАС</p>
             </div>
 
