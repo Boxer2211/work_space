@@ -56,6 +56,9 @@
 .Shop__rightbar{
     grid-area: C;
 }
+.Shop__itemCard{
+    cursor: pointer;
+}
 
 .Shop__itemCardImg {
     width: 100%;
@@ -93,6 +96,10 @@
 }
 .Shop__nonThing{
     font-size: 28px;
+}
+.fieldset__button{
+    margin: 5px;
+    padding: 2px;
 }
 
 /*-------------------------------------------------------------*/

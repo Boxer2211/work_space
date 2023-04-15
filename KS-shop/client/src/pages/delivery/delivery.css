@@ -1,0 +1,29 @@
+.delivery{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+}
+.delivery__description{
+    padding: 15px;
+}
+
+.delivery__description h1{
+    text-align: center;
+    margin: 20px 0 30px 0;
+}
+.delivery__img{
+    width: 110px;
+    height: 100px;
+}
+.delivery__variable{
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    
+}
+.delivery__novapost{
+    margin-right: 10px;
+    text-align: center;
+}

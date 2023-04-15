@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import './shop.css';
 import { Items } from '../../store/items';
 import Footer from '../../components/Mainpage/Footer'
-
+import { CARD_ROUTE } from '../../utils/consts';
+import { useNavigate } from "react-router-dom";
 
 
 function Shop() {
     
    const [arrCard, setArrCard] = useState(Items)
    const [title, setTitle] = useState('Всі категорії')
+   const navigate = useNavigate()
 
    
 
@@ -39,6 +41,7 @@ function Shop() {
                 <div className='Shop__categoriesTitle'>
                     <h1>{title}</h1>
                 </div> 
+
                 
                 <div className='Shop__leftbar'>
                     <div className='Shop__leftbarCategories'>
@@ -77,6 +80,7 @@ function Shop() {
                          onChange={() => filterCheckBox('Adidas')}></input>
                         <label for="horns">Adidas</label>
                         </div>
+                        <button className='fieldset__button'>Застосувати</button>
                     </fieldset>
                     </div>
                 </div>
@@ -89,7 +93,7 @@ function Shop() {
                     </div>
                     <div className='Shop__bar'>
                         {arrCard.length > 0 ? arrCard.map((item) => 
-                            <div className='Shop__itemCard' key={item.id}>
+                            <div className='Shop__itemCard' key={item.id} onClick={() => navigate(CARD_ROUTE + '/' + item.id)} >
                                 <div className='Shop__itemCardImg'>
                                     <img src={item.img} alt="foto" />
                                 </div>

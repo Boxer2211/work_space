@@ -1,0 +1,12 @@
+.Card__container{
+    padding: 20px;
+}
+.Card__foto {
+    width: 25%;
+    height: 25%;
+}
+
+.Card__foto img{
+    width: 100%;
+    height: auto;
+}
