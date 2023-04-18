@@ -6,22 +6,36 @@ import usericon from '../img/Frame (2).svg';
 import '../App.css';
 import { useNavigate } from 'react-router-dom';
 import { CONTACTS_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
+import { useDispatch, useSelector } from 'react-redux';
+import {toolkitSlise} from './Redux_toolkit/toolkitSlice';
+
+
 
 
 function Navbar() {
   
     const [menuActive, setMenuActive] = useState (false)
     const [userActive, setUserActive] = useState (false)
+    const [favoritActive, setfavoritActive] = useState (false)
+    const [bascetActive, setbascetActive] = useState (false)
     
     const navigate = useNavigate();
 
+    const {user} = useSelector(state => state.toolkit)
+    const dispatch = useDispatch()
+    
+    const {Auth} = toolkitSlise.actions
+
+    console.log(user);
 
     return (
     <div className="header">
         <div className="header__container">
             <div className="header__menu">
                 <input className="header__burger" type="image" src={BurgerMenuImg} alt="Кнопка «menu»" onClick={() => setMenuActive(!menuActive)}></input>
-                <div className={menuActive ? 'Menu__list active' : 'Menu__list'} onClick={() => setMenuActive(false)}>    
+                <div className={menuActive ? 'Menu__list active' : 'Menu__list'} onClick={() => {
+                    setMenuActive(false);
+                    }}>    
         
                     <div className='Menu__content' onClick={e => e.stopPropagation()}>
                         <div className='Burger__container'>
@@ -46,11 +60,29 @@ function Navbar() {
 
             <div className="header__icon">
                 <div onClick={() => setUserActive(!userActive)}><img src={usericon} alt="hart"/></div>
-                <div onClick={() => setUserActive(!userActive)}><img src={hart} alt="hart" /></div>
-                <div onClick={() => setUserActive(!userActive)}> <img src={bascet} alt="hart" /></div>
-                <div className={userActive ? 'userMenu active' : 'userMenu'}>
-                    <div className='userMenu__content'>
+                <div onClick={() => setfavoritActive(!favoritActive)}><img src={hart} alt="hart" /></div>
+                <div onClick={() => setbascetActive(!bascetActive)}> <img src={bascet} alt="hart" /></div>
+                <div className={userActive ? 'userMenu active' : 'userMenu'} onClick={() => {
+                    setUserActive(false);
+                    }}>    
+                    <div className='userMenu__content' onClick={e => e.stopPropagation()}>
+                        bascet
+                    </div>
+                </div>
+                <div className={favoritActive ? 'userMenu active' : 'userMenu'} onClick={() => {
+                    setfavoritActive(false);
+                    setbascetActive(false);
+                    }}>  
+                    <div className='userMenu__content' onClick={e => e.stopPropagation()}>
+                        hart
+                    </div>
+                </div>
+                <div className={bascetActive ? 'userMenu active' : 'userMenu'} onClick={() => {
+                    setbascetActive(false);
+                    }}>  
+                    <div className='userMenu__content' onClick={e => e.stopPropagation()}> 
                         
+                        <input type="button" value={'Авторизуватись'} onClick={() => dispatch(Auth())}/>
                     </div>
                 </div>
             </div>

@@ -36,12 +36,28 @@ export const publicRoutes = [
 
 export const privateRoutes = [
     {
-        path: ADMIN_ROUTE ,
-        Component: 1
+        path: MAIN_ROUTE,
+        Component:  <MainPage />
     },
     {
-        path: BASKET_ROUTE ,
-        Component: 1
+        path: SHOP_ROUTE,
+        Component:  <Shop />
+    },
+    {
+        path: DELIVERY_ROUTE,
+        Component:  <Delivery />
+    },
+    {
+        path: CONDITION_ROUTE,
+        Component:  <Condition />
+    },
+    {
+        path: CARD_ROUTE + '/:id',
+        Component:  <Card/>
+    },
+    {
+        path: CONTACTS_ROUTE,
+        Component: <ContactPage />
     }
     
 ]

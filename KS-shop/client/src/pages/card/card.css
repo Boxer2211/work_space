@@ -10,3 +10,21 @@
     width: 100%;
     height: auto;
 }
+.Card__item{
+    display: flex;
+    margin-top: 15px;
+}
+.Card__description{
+    margin-left: 25px;
+}
+.Card__description input{
+    margin: 15px 10px 0 0;
+    padding: 7px;
+}
+/*_______________________________________________________*/
+@media (max-width: 650px) {
+    .Card__foto {
+        width: 150px;
+        height: 200px;
+    }
+}    
