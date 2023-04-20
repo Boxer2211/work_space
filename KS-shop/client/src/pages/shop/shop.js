@@ -4,6 +4,8 @@ import { Items } from '../../store/items';
 import Footer from '../../components/Mainpage/Footer'
 import { CARD_ROUTE } from '../../utils/consts';
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { toolkitSlise } from '../../components/Redux_toolkit/toolkitSlice';
 
 
 function Shop() {
@@ -11,8 +13,11 @@ function Shop() {
    const [arrCard, setArrCard] = useState(Items)
    const [title, setTitle] = useState('Всі категорії')
    const navigate = useNavigate()
-
    
+ 
+   const dispatch = useDispatch()
+   const {AddFavorit, RemoveFavorit,AddBasket,RemoveBasket} = toolkitSlise.actions
+   const {favorite, basket} = useSelector(state => state.toolkit)
 
     function SortLow() {
         let copy = Object.assign([], arrCard);
@@ -100,6 +105,23 @@ function Shop() {
                                 <p>{item.name}</p>
                                 <p>{item.brand}</p>
                                 <p id='item__price'>{item.price} грн</p>
+                                <div className='Shop__buttonCard'  onClick={e => e.stopPropagation()}>
+                                    {basket.find((elem) => elem.id == item.id) ? (
+                                            <input className='ButtonActive' type="button" value={'Відмінити'} onClick={() => dispatch(RemoveBasket(item.id))} />
+                                        ) 
+                                        : 
+                                        (
+                                            <input type="button" value={'В корзину'} onClick={() => dispatch(AddBasket(item))} />
+                                        )}
+                                  
+                                   {favorite.find((elem) => elem.id == item.id) ? (
+                                            <input className='ButtonActive' type="button" value={'Обране'} onClick={() => dispatch(RemoveFavorit(item.id))} />
+                                        ) 
+                                        : 
+                                        (
+                                            <input type="button" value={'До обраного'} onClick={() => dispatch(AddFavorit(item))} />
+                                        )}
+                                </div>
                             </div>                     
                             )
                             : <div className='Shop__nonThing'>Товар не знайдено. Оберіть іншу категорію або бренд.</div>

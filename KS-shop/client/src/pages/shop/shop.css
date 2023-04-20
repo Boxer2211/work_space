@@ -101,6 +101,15 @@
     margin: 5px;
     padding: 2px;
 }
+.Shop__buttonCard{
+    display: flex;
+    justify-content: space-around;
+}
+.Shop__buttonCard input{
+    padding: 7px;
+}
+
+
 
 /*-------------------------------------------------------------*/
 

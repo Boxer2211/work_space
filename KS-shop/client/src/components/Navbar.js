@@ -8,12 +8,12 @@ import { useNavigate } from 'react-router-dom';
 import { CONTACTS_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import { useDispatch, useSelector } from 'react-redux';
 import {toolkitSlise} from './Redux_toolkit/toolkitSlice';
-
-
-
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Navbar() {
-  
+    
+
     const [menuActive, setMenuActive] = useState (false)
     const [userActive, setUserActive] = useState (false)
     const [favoritActive, setfavoritActive] = useState (false)
@@ -21,13 +21,20 @@ function Navbar() {
     
     const navigate = useNavigate();
 
-    const {user} = useSelector(state => state.toolkit)
+    const { RemoveFavorit, RemoveBasket, AddBasket} = toolkitSlise.actions
+    const {userAuth} = useSelector(state => state.toolkit)
+    const [user] = useAuthState(userAuth)
+
+    const Login = async () => {
+        const provider = new GoogleAuthProvider();
+        const {user} = await signInWithPopup(userAuth, provider)
+    }
+
     const dispatch = useDispatch()
+    const {favorite, basket} = useSelector(state => state.toolkit)
+
+
     
-    const {Auth} = toolkitSlise.actions
-
-    console.log(user);
-
     return (
     <div className="header">
         <div className="header__container">
@@ -59,14 +66,48 @@ function Navbar() {
             </div>
 
             <div className="header__icon">
-                <div onClick={() => setUserActive(!userActive)}><img src={usericon} alt="hart"/></div>
-                <div onClick={() => setfavoritActive(!favoritActive)}><img src={hart} alt="hart" /></div>
-                <div onClick={() => setbascetActive(!bascetActive)}> <img src={bascet} alt="hart" /></div>
+                <div onClick={() => {
+                                    setUserActive(!userActive);
+                                    setfavoritActive(false)
+                                    setbascetActive(false)
+                                     }}><img src={usericon} alt="hart"/></div>
+                <div onClick={() => {
+                                    setfavoritActive(!favoritActive)
+                                    setUserActive(false)
+                                    setbascetActive(false)
+                                    }}><img src={hart} alt="hart" /></div>
+                <div onClick={() => {
+                                    setbascetActive(!bascetActive)
+                                    setUserActive(false)
+                                    setfavoritActive(false)
+                                    }}> <img src={bascet} alt="hart" /></div>
                 <div className={userActive ? 'userMenu active' : 'userMenu'} onClick={() => {
                     setUserActive(false);
                     }}>    
                     <div className='userMenu__content' onClick={e => e.stopPropagation()}>
-                        bascet
+                    
+                           <div className='UserMenu__notAuth'>
+                           {basket.length > 0 ? (
+                                <div> {basket.map((item) => 
+                                    <div className='Shop__favoritePage'>
+                                        <div className='Shop__itemCardImg'>
+                                                <img src={item.img} alt="foto" />
+                                            </div>
+                                            <p>{item.name}</p>
+                                            <p>{item.brand}</p>
+                                            <p id='item__price'>{item.price} грн</p>
+                                            <input type="button" value={'Delet'} onClick={() => dispatch(RemoveBasket(item.id))}/>
+                                    </div>
+                                    )}
+                                    <p id='orderPrice'> Ваше замовлення на суму: {basket.reduce((a,b) => a + b.price,0)} грн</p>
+                                    <input id='orderButton' type="button" value={'Підтвердити замовлення'}  /> 
+                                    </div>
+                                    ) 
+                                    :
+                                    ( <div>Тут буде ваше замовлення</div>)}
+                               
+                            </div>    
+                       
                     </div>
                 </div>
                 <div className={favoritActive ? 'userMenu active' : 'userMenu'} onClick={() => {
@@ -74,7 +115,24 @@ function Navbar() {
                     setbascetActive(false);
                     }}>  
                     <div className='userMenu__content' onClick={e => e.stopPropagation()}>
-                        hart
+                    {favorite.length > 0 ? (
+                    favorite.map((item) => 
+                        <div className='Shop__favoritePage'>
+                            <div className='Shop__itemCardImg'>
+                                    <img src={item.img} alt="foto" />
+                                </div>
+                                <p>{item.name}</p>
+                                <p>{item.brand}</p>
+                                <p id='item__price'>{item.price} грн</p>
+                                <input type="button" value={'В корзину'} onClick={() => dispatch(AddBasket(item))}/>
+                                <input type="button" value={'Delet'} onClick={() => dispatch(RemoveFavorit(item.id))}/>
+                        </div>
+                        )) 
+                        :
+                        ( <div>Тут буде ваше обаране</div>)
+
+                    }
+                    
                     </div>
                 </div>
                 <div className={bascetActive ? 'userMenu active' : 'userMenu'} onClick={() => {
@@ -82,7 +140,23 @@ function Navbar() {
                     }}>  
                     <div className='userMenu__content' onClick={e => e.stopPropagation()}> 
                         
-                        <input type="button" value={'Авторизуватись'} onClick={() => dispatch(Auth())}/>
+                        {user ? 
+                        (
+                            <div>
+                                <div id='imgUserLogo'><img id='imgLogo' src={user.photoURL} alt=""/></div>
+                                <p>{user.displayName}</p>
+                                <p>{user.email}</p>
+                                <input className='AuthButton' type="button" value={'Вийти'} onClick={() => userAuth.signOut()}/>
+                            </div>
+                        )
+                        :
+                        (   <div className='UserMenu__notAuth'>
+                                <div> Для відображення вашого профілю потрібно авторизуватись</div>
+                                <input className='AuthButton' type="button" value={'Увійти за допомогою Google'} onClick={Login}/>
+                            </div>    
+                        )}
+                       
+                        
                     </div>
                 </div>
             </div>

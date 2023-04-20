@@ -135,7 +135,7 @@ cursor: pointer;
 
 .userMenu__content{
   width: 30%;
-  height: 50%;
+  height: fit-content;
   background-color: rgb(58, 58, 58);
   color: rgb(207, 200, 200);
   
@@ -149,8 +149,50 @@ cursor: pointer;
   padding: 25px 10px;
   font-size: 22px;
 }
+.UserMenu__notAuth{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.AuthButton{
+  margin-top: 15px;
+  padding: 5px;
+}
+#imgUserLogo{
+  width: 100px;
+  height: 100px;
+ 
+}
+#imgLogo{
+  width: 100%;
+  height: auto;
+  border-radius: 100px;
+}
 
-
+.Shop__itemCardImg{
+  display: flex;
+}
+.Shop__favoritePage{
+  display: flex;
+  border: 1px solid white;
+}
+.Shop__favoritePage p{
+ margin: 5px;
+}
+.Shop__favoritePage input{
+  padding: 5px;
+ }
+.ButtonActive{
+  background-color: green;
+}
+#orderPrice{
+  margin: 10px 0;
+}
+#orderButton{
+  padding: 5px;
+}
 
 /* Media _________________________________________________________________________________*/
 
@@ -183,7 +225,7 @@ cursor: pointer;
     }
     .userMenu__content{
       width: 80%;
-      height: 100%;
+      height: fit-content;
     }
    
   }
