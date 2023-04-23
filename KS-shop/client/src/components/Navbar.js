@@ -47,7 +47,7 @@ function Navbar() {
                     <div className='Menu__content' onClick={e => e.stopPropagation()}>
                         <div className='Burger__container'>
                             <p onClick={() => navigate(MAIN_ROUTE)}>Головна</p>
-                            <p onClick={() => navigate(SHOP_ROUTE)}>Католог</p>
+                            <p onClick={() => navigate(SHOP_ROUTE  + '/' + 'all')}>Католог</p>
                             <p onClick={() => navigate(CONTACTS_ROUTE)}>Про нас</p>
                             <p onClick={() => navigate(CONTACTS_ROUTE)}>Контакти</p>
                         </div>
@@ -57,7 +57,7 @@ function Navbar() {
             
             <div className="header__nav">
                 
-                <p onClick={() => navigate(SHOP_ROUTE)}>КАТАЛОГ</p>
+                <p onClick={() => navigate(SHOP_ROUTE  + '/' + 'all')}>КАТАЛОГ</p>
                 <p onClick={() => navigate(CONTACTS_ROUTE)}>ПРО НАС</p>
             </div>
 

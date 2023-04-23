@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './shop.css';
 import { Items } from '../../store/items';
 import Footer from '../../components/Mainpage/Footer'
 import { CARD_ROUTE } from '../../utils/consts';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { toolkitSlise } from '../../components/Redux_toolkit/toolkitSlice';
+
 
 
 function Shop() {
@@ -13,8 +14,10 @@ function Shop() {
    const [arrCard, setArrCard] = useState(Items)
    const [title, setTitle] = useState('Всі категорії')
    const navigate = useNavigate()
-   
- 
+    
+   const params = useParams()
+   const param = params.name 
+
    const dispatch = useDispatch()
    const {AddFavorit, RemoveFavorit,AddBasket,RemoveBasket} = toolkitSlise.actions
    const {favorite, basket} = useSelector(state => state.toolkit)
@@ -29,17 +32,33 @@ function Shop() {
         copy.sort((a, b) => a['price'] < b['price'] ? 1 : -1)
         setArrCard(copy) 
       }
-    function filterCategories (category) {
+    function filterCategories (category, name) {
         let copy = Object.assign([], Items)
         setArrCard(copy.filter((item) => item.type === category))
+        setTitle(name)
         
     }
     function filterCheckBox (brand) {
-        let copy = Object.assign([], arrCard)
-        setArrCard(copy.filter((item) => item.brand === brand))
-    }
-    
-    return (
+            let copy = Object.assign([], arrCard)
+            setArrCard(copy.filter((item) => item.brand === brand))
+        }
+
+    useEffect(()=>{
+        if (param === 'all') {
+            setTitle('Всі категорії')
+        } else if( param === 'jacket') {
+            filterCategories(param,'Верхній одяг') 
+        } else if( param === 'jeans') {
+            filterCategories(param,'Джинси') 
+        } else if( param === 'shoes') {
+            filterCategories(param,'Взуття') 
+        } else if( param === 'shirt') {
+            filterCategories(param,'Футболки') 
+        }
+        
+    }, [param])
+
+       return (
         <div className='Shop'>
             <div class="Contact__item-L"></div>
             <div className='Shop__container'>
@@ -53,14 +72,14 @@ function Shop() {
                         <h2>Категорії</h2>
                         <p onClick={() => {setArrCard(Items); 
                     setTitle('Всі категорії')}}>- Всі категорії</p>
-                        <p onClick={() => {filterCategories('jacket');
-                    setTitle('Верхній одяг')}}>- Верхній одяг</p>
-                        <p onClick={() => {filterCategories('jeans');
-                    setTitle('Джинси')}}>- Джинси</p>
-                        <p onClick={() => {filterCategories('shoes');
-                    setTitle('Взуття')}}>- Взуття</p>
-                        <p onClick={() => {filterCategories('shirt');
-                    setTitle('Футболки')}}>- Футболки</p>
+                        <p onClick={() => {filterCategories('jacket','Верхній одяг');
+                    }}>- Верхній одяг</p>
+                        <p onClick={() => {filterCategories('jeans','Джинси');
+                    }}>- Джинси</p>
+                        <p onClick={() => {filterCategories('shoes','Взуття');
+                    }}>- Взуття</p>
+                        <p onClick={() => {filterCategories('shirt','Футболки');
+                    }}>- Футболки</p>
                     </div>
                     <div className='Shop__leftbarBrands'>
                     <fieldset className='fieldset'>

@@ -24,7 +24,7 @@ function Card() {
        <div className='Card'>
             <div class="Contact__item-L"></div>
                 <div className='Card__container'>
-                    <button onClick={() => navigate(SHOP_ROUTE)}>Назад до каталогу</button>
+                    <button onClick={() => navigate(SHOP_ROUTE  + '/' + 'all')}>Назад до каталогу</button>
                     <div className='Card__item'>
                         <div className='Card__foto'>
                             <img src={item.img} alt="item" />

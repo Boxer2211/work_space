@@ -5,7 +5,7 @@ import Condition from "./pages/condition/condition"
 import ContactPage from "./pages/contacts/contactPage"
 import Delivery from "./pages/delivery/delivery"
 import Shop from "./pages/shop/shop"
-import { ADMIN_ROUTE, BASKET_ROUTE, CARD_ROUTE, CONDITION_ROUTE, CONTACTS_ROUTE, DELIVERY_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from "./utils/consts"
+import {CARD_ROUTE, CONDITION_ROUTE, CONTACTS_ROUTE, DELIVERY_ROUTE, MAIN_ROUTE, SHOP_ROUTE } from "./utils/consts"
 
 export const publicRoutes = [
     {
@@ -13,7 +13,7 @@ export const publicRoutes = [
         Component:  <MainPage />
     },
     {
-        path: SHOP_ROUTE,
+        path: SHOP_ROUTE +'/:name',
         Component:  <Shop />
     },
     {
