@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {toolkitSlise} from './Redux_toolkit/toolkitSlice';
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Modal from '../pages/modal/modal';
 
 function Navbar() {
     
@@ -18,7 +19,8 @@ function Navbar() {
     const [userActive, setUserActive] = useState (false)
     const [favoritActive, setfavoritActive] = useState (false)
     const [bascetActive, setbascetActive] = useState (false)
-    
+    const [active, setActive] = useState(true)
+
     const navigate = useNavigate();
 
     const { RemoveFavorit, RemoveBasket, AddBasket} = toolkitSlise.actions
@@ -100,7 +102,7 @@ function Navbar() {
                                     </div>
                                     )}
                                     <p id='orderPrice'> Ваше замовлення на суму: {basket.reduce((a,b) => a + b.price,0)} грн</p>
-                                    <input id='orderButton' type="button" value={'Підтвердити замовлення'}  /> 
+                                    <input id='orderButton' type="button" value={'Підтвердити замовлення'} onClick={() => setActive(true)} /> 
                                     </div>
                                     ) 
                                     :
@@ -162,6 +164,7 @@ function Navbar() {
             </div>
         
         </div>
+        <Modal active = {active}  setActive={setActive} />
     </div>
   );
 }
