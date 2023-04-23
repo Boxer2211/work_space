@@ -19,7 +19,7 @@ function Navbar() {
     const [userActive, setUserActive] = useState (false)
     const [favoritActive, setfavoritActive] = useState (false)
     const [bascetActive, setbascetActive] = useState (false)
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
 
     const navigate = useNavigate();
 

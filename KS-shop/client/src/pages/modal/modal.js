@@ -2,6 +2,7 @@ import React from 'react';
 import './modal.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { toolkitSlise } from '../../components/Redux_toolkit/toolkitSlice';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 
 function Modal({active, setActive}) {
@@ -9,7 +10,9 @@ function Modal({active, setActive}) {
   const {RemoveBasket} = toolkitSlise.actions
   const {basket} = useSelector(state => state.toolkit)
   const dispatch = useDispatch()
-   
+  const {userAuth} = useSelector(state => state.toolkit)
+  const [user] = useAuthState(userAuth)
+
     return (
       <div className={active ? 'Modal active' : 'Modal'} onClick={() => setActive(false)}>
         <div className='Modal__content' onClick={e => e.stopPropagation()}>
@@ -27,9 +30,14 @@ function Modal({active, setActive}) {
                                       </div>
                                       )}
                                     <p id='orderPrice'> Ваше замовлення на суму: {basket.reduce((a,b) => a + b.price,0)} грн</p>
-                                    
-                                    
-                                    <input id='orderButton' type="button" value={'Підтвердити замовлення'}  /> 
+                                    <p>Ваше ім'я</p>
+                                    <input type="text" value={user ? user.displayName : null} />
+                                    <p>Ваш номер телефону</p>
+                                    <input type="tel"/>
+                                    <p>Вашa електрона адреса</p>
+                                    <input type="email" value={user ? user.email : null}/>
+                                    <p>Якщо дані вірні підтверджуйте замовлення</p>
+                                    <input  id='orderButton' type="button" value={'Підтвердити замовлення'}  /> 
                                   </div>
           </div>
       </div>
