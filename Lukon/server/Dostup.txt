@@ -1,3 +1,0 @@
-mongoDB:
-user: Lukon
-Password: UZ8DeH03VbeCrRX4
