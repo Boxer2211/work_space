@@ -7,3 +7,4 @@ function shiftedDiff(first,second){
     }
     console.log(first)
   }
+  

@@ -1,0 +1,27 @@
+.hotel-booking-timeline {
+    position: relative;
+  }
+  
+  .current-time-indicator {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: red;
+  }
+.booking-controls{
+    padding: 20px;
+}  
+.booking-controls input{
+    margin: 10px;
+    border: solid, 1px, black;
+}  
+.booking-controls button{
+    padding: 5px;
+    cursor: pointer;
+}  
+.selected-booking {
+    background-color: green !important;
+    color: white !important;
+  }
+  
